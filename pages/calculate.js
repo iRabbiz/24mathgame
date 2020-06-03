@@ -45,13 +45,32 @@ export default () => {
     }
   };
 
+  const numberToggleClick = (event) => {
+    let number_index = event.currentTarget.getAttribute("data-id");
+    let number_card_toggle = numberToggle;
+    number_card_toggle[number_index] = true;
+    setNumberToggle(number_card_toggle);
+  };
+
   const calculate = () => {
     let eval_num = eval(numberFirst + operationVal + numberSecond);
-    alert(eval_num);
 
     let number_card_total = numberCard;
+    if (number_card_total.length == 6) {
+      if (eval_num == 24) {
+        alert("You Win!");
+      } else {
+        alert("Game Over");
+      }
+      window.location.reload(false)
+    }
+
     number_card_total.push(eval_num);
     setNumberCard(number_card_total);
+
+    let number_card_toggle = numberToggle;
+    number_card_toggle.push(false);
+    setNumberToggle(number_card_toggle);
 
     setNumberFirst(null);
     setNumberSecond(null);
@@ -73,7 +92,13 @@ export default () => {
                 data-number={item}
                 data-id={index}
               >
-                <CardContent className="number-card-detail" onClick={() => setNumberToggle[index](!numberToggle[index])}>{item}</CardContent>
+                <CardContent
+                  className="number-card-detail"
+                  onClick={numberToggleClick}
+                  data-id={index}
+                >
+                  {item}
+                </CardContent>
               </Card>
             </Col>
           );
