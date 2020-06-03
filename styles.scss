@@ -1,0 +1,23 @@
+// $font-color: red;
+// .example {
+//   color: $font-color !important;
+// }
+
+@import "~bootstrap/scss/bootstrap";
+
+.number-card {
+  height: 20vw;
+  background: #263238 !important;
+  
+}
+
+.number-card-detail {
+  min-height: 100%;
+  line-height: 5;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hide {
+    display: none;
+}
