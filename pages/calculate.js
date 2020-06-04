@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import "../styles.scss";
 
 import { Row, Col } from "react-bootstrap";
-import { Card, CardContent, Button } from "@material-ui/core";
+import { Card, CardContent, Button } from "@material-ui/core"
 
 export default () => {
   const [numberCard, setNumberCard] = useState([0, 0, 0, 0]);
@@ -103,17 +103,6 @@ export default () => {
             </Col>
           );
         })}
-
-        {/* <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 0 }}>
-          <Card
-            className={`mb-3 number-card ${numberToggle[1] ? "hide" : ""}`}
-            onClick={() => setNumberToggle[1](!numberToggle[1])}
-          >
-            <CardContent className="number-card-detail" onClick={numberClick}>
-              {numberCard2Elm}
-            </CardContent>
-          </Card>
-        </Col> */}
 
         <Col xs={{ span: 10, offset: 1 }}>
           <Button variant="contained" className="mr-2" onClick={operationClick}>
